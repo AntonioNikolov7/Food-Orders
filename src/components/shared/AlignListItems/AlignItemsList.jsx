@@ -17,6 +17,7 @@ export default function AlignItemsList({ items, source }) {
     if (source === "cart") {
       cartCtx.removeItem(item.id);
     } else {
+      //source is list item
       cartCtx.addItem(item);
     }
   };
