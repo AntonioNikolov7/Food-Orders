@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import "../Items.css";
-import BackButton from "../BackButton";
+import "./Items.css";
+import BackButton from "./BackButton";
 
-import AlignItemsList from "../../../shared/AlignListItems/AlignItemsList";
-const BurgersItem = ({ onClose }) => {
+import AlignItemsList from "../../shared/AlignListItems/AlignItemsList";
+const MealCategory = ({ onClose, name, category }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
     (async () => {
-      const resData = await fetch("http://localhost:5000/food/burgers")
+      const resData = await fetch(`http://localhost:5000/food/${category}`)
         .then((res) => res.json())
         .then((data) => data);
       setItems(resData);
@@ -19,7 +19,7 @@ const BurgersItem = ({ onClose }) => {
     <>
       <div className="item">
         <div className="item-header">
-          <span>BURGERS PAGE</span>
+          <span>{name}</span>
           <BackButton onClick={onClose}></BackButton>
         </div>
         <div>
@@ -30,4 +30,4 @@ const BurgersItem = ({ onClose }) => {
   );
 };
 
-export default BurgersItem;
+export default MealCategory;

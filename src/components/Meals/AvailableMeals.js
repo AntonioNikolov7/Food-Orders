@@ -1,14 +1,12 @@
 import { useState } from "react";
 
 import Burger from "../Meals/Categories/Burgers/Burger";
-import BurgersItem from "../Meals/Categories/Burgers/BurgersItem";
+import "../Meals/Categories/Items.css";
 import Drinks from "../Meals/Categories/Drinks/Drinks";
-import DrinksItem from "../Meals/Categories/Drinks/DrinksItem";
-import Steaks from "../Meals/Categories/Steaks/Steaks";
-import SteaksItems from "../Meals/Categories/Steaks/SteaksItems";
 import Pizza from "../Meals/Categories/Pizza/Pizza";
-import PizzaItem from "../Meals/Categories/Pizza/PizzaItem";
+import Steaks from "../Meals/Categories/Steaks/Steaks";
 import classes from "./AvailableMeals.module.css";
+import MealCategory from "./Categories/MealCategory";
 
 const PIZZA_CATEGORY_ID = "pizza-category";
 const STEAKS_CATEGORY_ID = "steaks-category";
@@ -33,29 +31,40 @@ const AvailableMeals = () => {
       <div className={classes.meals}>
         <Pizza onClick={() => toggleSelectedCategory(PIZZA_CATEGORY_ID)} />
         <Steaks onClick={() => toggleSelectedCategory(STEAKS_CATEGORY_ID)} />
-
         <Burger onClick={() => toggleSelectedCategory(BURGER_CATEGORY_ID)} />
         <Drinks onClick={() => toggleSelectedCategory(DRINKS_CATEGORY_ID)} />
       </div>
       <div>
         {selectedCategory === PIZZA_CATEGORY_ID && (
-          <PizzaItem
+          <MealCategory
+            name={"PIZZA"}
+            category={"pizza"}
             onClick={() => toggleSelectedCategory(PIZZA_CATEGORY_ID)}
+            onClose={() => toggleSelectedCategory(PIZZA_CATEGORY_ID)}
           />
         )}
         {selectedCategory === STEAKS_CATEGORY_ID && (
-          <SteaksItems
+          <MealCategory
+            name={"STEAK"}
+            category={"steaks"}
             onClick={() => toggleSelectedCategory(STEAKS_CATEGORY_ID)}
+            onClose={() => toggleSelectedCategory(STEAKS_CATEGORY_ID)}
           />
         )}
         {selectedCategory === BURGER_CATEGORY_ID && (
-          <BurgersItem
+          <MealCategory
+            name={"BURGERS"}
+            category={"burgers"}
             onClick={() => toggleSelectedCategory(BURGER_CATEGORY_ID)}
+            onClose={() => toggleSelectedCategory(BURGER_CATEGORY_ID)}
           />
         )}
         {selectedCategory === DRINKS_CATEGORY_ID && (
-          <DrinksItem
+          <MealCategory
+            name={"DRINKS"}
+            category={"drinks"}
             onClick={() => toggleSelectedCategory(DRINKS_CATEGORY_ID)}
+            onClose={() => toggleSelectedCategory(DRINKS_CATEGORY_ID)}
           />
         )}
       </div>

@@ -1,0 +1,13 @@
+.closeCart-btn {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  width: auto;
+}
+
+.empty-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}

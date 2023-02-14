@@ -10,9 +10,8 @@ const cartReducer = (state, action) => {
   if (action.type === "ADD_ITEM") {
     let itemsCopy = [...state.items];
     const index = itemsCopy.findIndex((item) => item.id === action.item.id);
-
     if (index > -1) {
-      //we have ordered this pizzas
+      //we have ordered these pizzas
       let pizza = itemsCopy[index];
       pizza.orderedAmount = pizza.orderedAmount + 1;
 
@@ -28,7 +27,7 @@ const cartReducer = (state, action) => {
     };
   } else if (action.type === "REMOVE") {
     return {
-      items: state.items.filter((item) => item?.id !== action.id),
+      items: state.items.filter((item) => item.id !== action.id),
     };
   }
   return defaultCartState;

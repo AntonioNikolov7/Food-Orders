@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../UI/Button";
 import classes from "./MenuIcon.module.css";
 
-function MenuIcon({ onToggle }) {
+function MenuBtn({ onToggle }) {
   const menuClickHandler = () => {
     onToggle();
   };
@@ -13,4 +13,4 @@ function MenuIcon({ onToggle }) {
   );
 }
 
-export default MenuIcon;
+export default MenuBtn;

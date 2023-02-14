@@ -42,7 +42,18 @@ export default function AlignItemsList({ items, source }) {
                 </React.Fragment>
               }
             />
-            {source === "cart" && <div>{item.orderedAmount}</div>}
+            {source === "cart" && (
+              <div className="cart-quantity">
+                <button>-</button>
+                <input
+                  className="cart-quantity_input"
+                  type="number"
+                  min="1"
+                ></input>
+                <button>+</button>
+                <span>Items : {item.orderedAmount}</span>
+              </div>
+            )}
             <div className="addToCart" onClick={() => onItemClick(item)}>
               <Button variant="outlined" startIcon={<AddShoppingCartIcon />}>
                 {source === "cart" ? "REMOVE ITEM" : "ADD TO CART"}
