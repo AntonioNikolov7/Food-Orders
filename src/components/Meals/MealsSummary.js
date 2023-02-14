@@ -1,5 +1,5 @@
 import { useState } from "react";
-import MenuIcon from "../Layout/MenuIcon";
+import MenuBtn from "../Layout/MenuBtn";
 import AvailableMeals from "./AvailableMeals";
 import classes from "./MealsSummary.module.css";
 
@@ -24,7 +24,7 @@ const MealsSummary = () => {
         </p>
       </section>
 
-      {showMeals ? <AvailableMeals /> : <MenuIcon onToggle={mealsToggle} />}
+      {showMeals ? <AvailableMeals /> : <MenuBtn onToggle={mealsToggle} />}
     </>
   );
 };

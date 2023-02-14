@@ -3,5 +3,12 @@
   align-items: center;
   justify-content: center;
   height: 150px;
+  width: 170px;
   cursor: pointer;
+}
+
+.cart-quantity_input {
+}
+.cart-quantity_input {
+  width: 30px;
 }
